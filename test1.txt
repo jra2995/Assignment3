@@ -5,3 +5,13 @@ search cabbage
 update cabbage 10
 delete shirt
 print
+insertclothingshirt20.5011
+blah electronics
+insert clothing vans 40 1 4
+insert electronics Vaio 1000.00 4 1
+update
+print something
+delete Yeezys
+search Snickers
+update PS3 10
+print

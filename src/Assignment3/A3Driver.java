@@ -389,11 +389,15 @@ public class A3Driver {
      * @param shoppingCart the list of items currently processed that will be updated
      */
     public static void insertAlphabetically(Item item, ArrayList<Item> shoppingCart){
-    	// Finds index in shoppingCart where the item will be placed, according to lexicographical order
-    	int index = 0;
+    	// Finds index in shoppingCart where the item will be placed, according to lexicographical order, 
+    	// case insensitive so that upper and lower case letters have same lexicographical value
+    	int index = shoppingCart.size();
     	for(int i = 0; i < shoppingCart.size(); i++){
-    		if(item.getName().compareTo(shoppingCart.get(i).getName()) < 0){
+    		String itemName = item.getName().toUpperCase();
+    		String itemInCartName = shoppingCart.get(i).getName().toUpperCase();
+    		if(itemName.compareTo(itemInCartName) < 0){
     			index = i;
+    			break;
     		}
     	}
     	
