@@ -262,7 +262,7 @@ public class A3Driver {
     		
     		// If an item is deleted, prints success. Otherwise prints that no items of that name were found in the cart.
     		if(itemExists){
-    			System.out.println(numDeleted + " " + name + "(s) were deleted from the shopping cart.");
+    			System.out.println(numDeleted + " instances of " + name + "(s) were deleted from the shopping cart.");
     		}
     		else{
     			System.err.println("Error - " + name + " is not in shopping cart, so we couldn\'t delete any.");
@@ -341,7 +341,7 @@ public class A3Driver {
     		// If the item is found one or more times, print success and the number of times in the cart, otherwise
     		// print an error saying the item was not found in the cart
     		if(numItems == 0){
-    			System.out.println("No " + name + "(s) were found in the shopping cart.");
+    			System.out.println("No instances of " + name + "(s) were found in the shopping cart.");
     		}
     		else{
     			System.out.println(numItems + " different instances of " + name + "(s) are " + 
