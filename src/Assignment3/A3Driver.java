@@ -1,3 +1,11 @@
+/**
+ * Classes to model a shopping cart and items of different types
+ * Solves EE422C Programming Assignment #3
+ * @author Jett Anderson and Brandon Arrindell 
+ * eid: jra2995, bja733
+ * @version 1.00 2016-02-21
+ */
+
 package Assignment3;
 
 import java.io.File;
