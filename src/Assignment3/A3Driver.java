@@ -40,7 +40,14 @@ public class A3Driver {
     public static void getInput(Scanner scan, ArrayList<Item> shoppingCart){
         // Parse input, take appropriate actions based on transaction operation
         while(scan.hasNextLine()){
-        	// Gets transaction line and splits into appropriate command Strings
+
+            try {
+                Thread.sleep(5);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            
+            // Gets transaction line and splits into appropriate command Strings
     		String transaction = scan.nextLine();
     		String[] commands = transaction.split(" ");
 			String operation = commands[0];
