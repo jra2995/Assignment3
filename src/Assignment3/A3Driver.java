@@ -261,7 +261,7 @@ public class A3Driver {
     		for(int i = 0; i < shoppingCart.size(); i++){
     			if(shoppingCart.get(i).getName().equals(name)){
     				itemExists = true;
-    				numDeleted++;
+    				numDeleted += shoppingCart.get(i).getQuantity();
     				shoppingCart.remove(i);
     				i--;
     			}
@@ -269,7 +269,7 @@ public class A3Driver {
     		
     		// If an item is deleted, prints success. Otherwise prints that no items of that name were found in the cart.
     		if(itemExists){
-    			System.out.println(numDeleted + " instances of " + name + "(s) were deleted from the shopping cart.");
+    			System.out.println(numDeleted + " " + name + "(s) were deleted from the shopping cart.");
     		}
     		else{
     			System.err.println("Error - " + name + " is not in shopping cart, so we couldn\'t delete any.");
@@ -312,6 +312,12 @@ public class A3Driver {
     			else{
     				int updatedQuantity = Integer.parseInt(updatedQuantityResponse);
     				shoppingCart.get(index).setQuantity(updatedQuantity);
+    				updatedQuantity = 0;
+    				for(int i = 0; i < shoppingCart.size(); i++){
+    					if(shoppingCart.get(i).getName().equals(name)){
+    						updatedQuantity += shoppingCart.get(i).getQuantity();
+    					}
+    				}
     				System.out.println("There are now " + updatedQuantity + " " + shoppingCart.get(index).getName() + 
     						"(s) in the shopping cart.");
     			}
@@ -336,12 +342,12 @@ public class A3Driver {
     				"to next transaction.");
     	}
     	else{
-    		// Finds every instance of items with the same name as the search query in the cart
+    		// Finds total number of items with the same name as the search query in the cart
     		String name = commands[1];
     		int numItems = 0;
     		for(int i = 0; i < shoppingCart.size(); i++){
     			if(shoppingCart.get(i).getName().equals(name)){
-    				numItems++;
+    				numItems += shoppingCart.get(i).getQuantity();
     			}
     		}
     		
@@ -351,15 +357,16 @@ public class A3Driver {
     			System.out.println("No instances of " + name + "(s) were found in the shopping cart.");
     		}
     		else{
-    			System.out.println(numItems + " different instances of " + name + "(s) are " + 
+    			System.out.println(numItems + " " + name + "(s) are " + 
     					"currently in the shopping cart.");
     		}
     	}
     }
     
     /**
-     * If a print command is called, then prints statistics on every item in the shopping cart (all instance fields for 
-     * every item), and then prints the total price of everything in the shopping cart
+     * If a print command is called, then prints statistics on every item in lexicographical order (case insensitive) 
+     * in the shopping cart (all instance fields for every item), and then prints the total price of everything 
+     * in the shopping cart
      * @param the commands field string array from the input file
      * @param shoppingCart the list of items currently processed and to be printed out
      */
