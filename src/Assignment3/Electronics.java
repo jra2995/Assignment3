@@ -61,7 +61,7 @@ public class Electronics extends Item {
         if (!this.getState().matches("TX|NM|VA|AZ|AK")) {
             salesTax = this.getPrice() * TAX_RATE;
         }
-        final_price = (double) (this.getPrice() * this.getQuantity() + shippingCost + salesTax);
+        final_price = this.getPrice() * this.getQuantity() + shippingCost + salesTax;
         return final_price;
     }
 }

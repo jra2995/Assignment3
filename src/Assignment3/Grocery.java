@@ -50,6 +50,8 @@ public class Grocery extends Item {
             shippingCost = shippingCost + shippingCost * .2;
         }
 
-        return final_price = (double) (this.getPrice() * this.getQuantity() + shippingCost);
+
+        final_price = this.getPrice() * this.getQuantity() + shippingCost;
+        return final_price;
     }
 }

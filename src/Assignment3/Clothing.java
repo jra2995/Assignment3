@@ -10,7 +10,6 @@ package Assignment3;
 
 public class Clothing extends Item {
     final double TAX_RATE = 0.1;
-    private String state;
 
     //Constructor for Clothing
     public Clothing(String name, double price, int quantity, int weight) {
@@ -36,7 +35,7 @@ public class Clothing extends Item {
      ******************************************************************************/
     double calculatePrice() {
         double final_price = 0;
-        final_price = (double) (super.calculatePrice() + super.calculatePrice() * TAX_RATE);
+        final_price = super.calculatePrice() + super.calculatePrice() * TAX_RATE;
         return final_price;
     }
 }
