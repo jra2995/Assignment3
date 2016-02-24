@@ -18,3 +18,11 @@ print
 insert electronics PS3 200 1 5 F NM
 search PS3
 print
+insert electronics Mac -1999.99 1 5 F TX
+insert groceries Apple 1.50 -10 5 P
+insert clothing hoodie 49.99 5 -20
+print
+update cabbage -10
+print
+insert clothing sh-rt 100 1 2
+print
